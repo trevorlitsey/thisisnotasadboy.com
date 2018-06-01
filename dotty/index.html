@@ -1,31 +1,40 @@
 <!DOCTYPE html>
+
 <head>
-		<link rel="icon" href="../ptrk2.gif" type="image/gif">
-	<title> sadness.online | dotty </title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link rel="icon" href="../favicon.ico" type="image/ico">
+	<title>dotty</title>
 </head>
+
 <body>
 	<div class="wrapper">
-			<canvas id="draw" width="100%" height="100%"></canvas>
+		<canvas id="draw" width="100%" height="100%"></canvas>
 	</div>
-				
-	<style>
 
-		html, body {
-			margin:0;
+	<style>
+		html,
+		body {
+			margin: 0;
 			height: 100vh;
 			width: 100vw;
 			overflow: hidden;
 			display: flex;
 			justify-content: center;
 		}
-		*, *:before, *:after { box-sizing: inherit; }
+
+		*,
+		*:before,
+		*:after {
+			box-sizing: inherit;
+		}
 
 		.wrapper {
-			margin:0 auto;
+			margin: 0 auto;
 			height: 100vh;
 			width: 100vw;
 		}
-
 	</style>
 
 	<Script>
@@ -56,7 +65,7 @@
 				// check if new point is in range of range
 				if (canvasMiddle + last + random >= canvasMiddle + range
 					|| canvasMiddle + last + random <= canvasMiddle - range) {
-						random = -random;
+					random = -random;
 				}
 				const y = canvasMiddle + last + random;
 
@@ -67,9 +76,9 @@
 				ctx.lineTo(x + .01, y + .01);
 				ctx.closePath();
 				ctx.stroke();
-				
+
 				last = y - canvasMiddle;
-				
+
 			}
 			userStart = last;
 
@@ -86,7 +95,7 @@
 		}
 
 		function beginDraw() {
-			const interval = setInterval(function() {
+			const interval = setInterval(function () {
 				if (stop) { clearInterval(interval) }
 				for (i = 0; i < 50; i++) {
 					draw();
@@ -108,10 +117,9 @@
 		window.addEventListener('resize', draw);
 		window.addEventListener('click', handleClick);
 		window.addEventListener('touchStart', handleClick);
-	
+
 	</script>
 
 </body>
+
 </html>
-
-
