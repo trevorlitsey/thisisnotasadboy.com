@@ -53,6 +53,9 @@
 
     setInterval(() => {
         node.innerHTML = node.innerHTML.slice(1)
+        if (node.innerHTML[0] === ' ') {
+            node.innerHTML = node.innerHTML.slice(1)
+        }
         write()
     }, 100)
 </script>
